@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
+         version="3.1">
+    
+    <welcome-file-list>
+        <welcome-file>index.jsp</welcome-file>
+    </welcome-file-list>
+
+    <context-param>
+        <param-name>driver</param-name>
+        <param-value>com.mysql.jdbc.Driver</param-value>
+    </context-param>
+    <context-param>
+        <param-name>url</param-name>
+        <param-value>jdbc:mysql://localhost:3306/test</param-value>
+    </context-param>
+    <context-param>
+        <param-name>username</param-name>
+        <param-value>root</param-value>
+    </context-param>
+    <context-param>
+        <param-name>passwd</param-name>
+        <param-value>912017</param-value>
+    </context-param>
+
+    <servlet>
+        <servlet-name>FirstServlet</servlet-name>
+        <servlet-class>hs.home.one.FirstServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>FirstServlet</servlet-name>
+        <url-pattern>/demo</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>GetApplication</servlet-name>
+        <servlet-class>hs.home.one.GetApplication</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>GetApplication</servlet-name>
+        <url-pattern>/demo1</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <!--这里的Servlet名字只是随便一个,config不是特指！！！-->
+        <servlet-name>confiig</servlet-name>
+        <jsp-file>/jsp/configtest2.jsp</jsp-file>
+        <init-param>
+            <param-name>name</param-name>
+            <param-value>韩帅</param-value>
+        </init-param>
+        <init-param>
+            <param-name>age</param-name>
+            <param-value>26</param-value>
+        </init-param>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>confiig</servlet-name>
+        <url-pattern>/config</url-pattern>
+    </servlet-mapping>
+
+    <!--<servlet>-->
+        <!--<servlet-name>TimerServlet</servlet-name>-->
+        <!--<servlet-class>hs.home.one.TimerServlet</servlet-class>-->
+        <!--<load-on-startup>1</load-on-startup>-->
+    <!--</servlet>-->
+
+    <!--<servlet-mapping>-->
+        <!--<servlet-name>TimerServlet</servlet-name>-->
+        <!--<url-pattern>/TimerServlet</url-pattern>-->
+    <!--</servlet-mapping>-->
+
+    <!--<listener>-->
+        <!--<listener-class>hs.home.two.GetConnListener</listener-class>-->
+    <!--</listener>-->
+</web-app>
